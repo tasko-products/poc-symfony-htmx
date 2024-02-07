@@ -1,0 +1,28 @@
+<section class="product__detail">
+    <img
+        src="{{ product.listingImage.url }}"
+        alt="{{ product.listingImage.alt }}"
+    >
+    <div class="label">{{ product.label }}</div>
+    
+    <section class="content">
+        <p class="brand">{{ product.brand }}</p>
+        <h1>{{ product.name }}</h1>
+        <div class="price">
+            {% if product.price.isReduced is same as(false) %}
+            {{ product.price }} Euro
+            {% else %}
+            <span class="original-price">{{ product.price }} Euro</span>
+            <span class="reduced">{{ product.price.reduced }} Euro</span>
+            {% endif %}
+        </div>
+        <button
+            hx-post="{{ path("add-to-basket") }}"
+            hx-vals='{"number": "{{ product.number }}"}'
+            hx-target=".cart .count"
+        >
+            Add to basket
+        </button>
+        <p>{{ product.listingImage.alt }}</p>
+    </section>
+</section>

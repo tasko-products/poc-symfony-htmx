@@ -1,0 +1,12 @@
+@import url("./components/components.css");
+
+:root {
+    --primary: #74ff1a;
+    --secondary: white;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}

@@ -1,0 +1,114 @@
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 50px;
+
+    .logo-container img {
+        height: 150px;
+
+        @media (max-width: 600px) {
+            & {
+                height: 50px;
+            }
+        }
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            margin-right: 20px;
+
+            a {
+                text-decoration: none;
+                color: var(--primary);
+                font-size: 18px;
+            }
+        }
+    }
+
+    .search-container {
+        display: flex;
+
+        @media (max-width: 600px) {
+            & {
+                width: 100%;
+            }
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+
+            @media (max-width: 600px) {
+                & {
+                    width: 100%;
+                }
+            }
+        }
+
+        button {
+            padding: 10px;
+            background-color: var(--primary);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+
+            &:hover {
+                background-color: #a3ff6b;
+            }
+        }
+
+        #search-results {
+            color: black;
+            position: absolute;
+            width: calc(100% - 20px);
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            margin-top: 60px;
+            right: 50px;
+
+            @media (max-width: 600px) {
+                & {
+                    right: 10px;
+                    left: 10px;
+                }
+            }
+
+            ul, span {
+                background-color: white;
+                padding: 10px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                float: right;
+
+                @media (max-width: 600px) {
+                    & {
+                        float: none;
+                    }
+                }
+
+                li {
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+
+                    :hover {
+                        background-color: #f6f6f6;
+                    }
+                }
+            }
+        }
+    }
+}

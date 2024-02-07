@@ -1,0 +1,23 @@
+<section 
+    class="product" 
+{% if loop.last is same as(true)  %}
+    hx-get="{{ path("products", {"page": page + 1}) }}"
+    hx-trigger="revealed"
+    hx-swap="afterend"
+{% endif%}
+>
+    <a href="{{ path("product", {"number": product.number}) }}">
+        <img src="{{ product.listingImage.url }}" alt="{{ product.listingImage.alt }}">
+        <div class="label">{{ product.label }}</div>
+        <div class="brand">{{ product.brand }}</div>
+        <h1 class="name">{{ product.name }}</h1>
+        <div class="price">
+            {% if product.price.isReduced is same as(false) %}
+            {{ product.price }} Euro
+            {% else %}
+            <span class="original-price">{{ product.price }} Euro</span>
+            <span class="reduced">{{ product.price.reduced }} Euro</span>
+            {% endif %}
+        </div>
+    </a>
+</section>

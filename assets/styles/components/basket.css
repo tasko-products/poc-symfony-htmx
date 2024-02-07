@@ -1,0 +1,33 @@
+.cart {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    svg {
+        position: relative;
+        top: 4px;
+        z-index: 1;
+        font-size: 24px;
+        color: white;
+        width: 50px;
+        height: 50px;
+    }
+
+    .count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        font-size: 11px;
+        border-radius: 50%;
+        background: #d60b28;
+        width: 16px;
+        height: 16px;
+        line-height:16px;
+        display: block;
+        text-align: center;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+    }
+}
